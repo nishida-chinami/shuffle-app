@@ -136,10 +136,8 @@ body{font-family:'Noto Sans JP','Yu Gothic Medium','游ゴシック Medium',YuGo
 <div class="wrap">
 
 <header class="hd">
-  <span class="hd-en">Toko Toko Funabashi</span>
   <div class="hd-main">
-    <span class="hd-ja">シャッフルランチ・組み分けアプリ</span>
-    <span class="hd-badge">ふなばし</span>
+    <span class="hd-ja">トコトコ ふなばし シャッフルランチ・組み分けアプリ</span>
   </div>
 </header>
 
@@ -316,7 +314,7 @@ function rMem(){
   const ch=document.getElementById('chips');
   document.getElementById('mcnt').textContent=members.length;
   if(!members.length){ch.innerHTML='<span class="chip-empty">まだ誰もいないトコ…</span>';return;}
-  ch.innerHTML=members.map((m,i)=>`<span class="chip">${m}<button class="chip-x" onclick="rmM(${i})" aria-label="${m}を削除" type="button"><i class="ti ti-x" style="font-size:12px;" aria-hidden="true"></i></button></span>`).join('');
+  ch.innerHTML=members.map((m,i)=>`<span class="chip">${m}<button class="chip-x" onclick="rmM(${i})" aria-label="${m}を削除" type="button" style="background:none;border:none;cursor:pointer;color:#8AAA00;padding:0 0 0 2px;font-size:14px;line-height:1;display:flex;align-items:center;font-weight:700;transition:color .1s;">✕</button></span>`).join('');
 }
 
 function addM(){
@@ -327,7 +325,7 @@ function addM(){
 }
 function rmM(i){members.splice(i,1);save();rMem();}
 function clearAll(){if(members.length&&!confirm('全員削除するトコ？'))return;members=[];save();rMem();}
-function loadSample(){members=['田中','佐藤','鈴木','高橋','伊藤','渡辺','山本','中村','小林','加藤'];save();rMem();toast('サンプルを読み込んだトコ！');}
+function loadSample(){members=['酒井美貴','吉住桃','兼本康平','徳山申太郎','西田ちなみ','田沢麻矢','西村茉理','柴田成','石黒柊斗','武田愛華','鈴木秀一朗','和田まゆこ','山内万莉子'];save();rMem();toast('サンプルを読み込んだトコ！');}
 
 function toggleSeat(){
   const on=document.getElementById('seat-chk').checked;
